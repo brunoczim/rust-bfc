@@ -1,0 +1,6 @@
+[package]
+name = "bfc"
+version = "0.1.0"
+authors = ["Bruno Corrêa Zimmermann <brunoczim@gmail.com>"]
+
+[dependencies]
