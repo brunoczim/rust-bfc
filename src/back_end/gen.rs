@@ -16,8 +16,7 @@ pub trait Arch {
     fn generate(
         &self,
         ast: Vec<Node<AstNode>>,
-        format:
-        Format,
+        format: Format,
         out: String
     ) -> Result<usize, Error>;
 

@@ -102,7 +102,7 @@ impl X86Mode {
             };
             match val {
                 AstNode::Increment(n) => {
-                    fetch_res!(out.write(b"  addl $"));
+                    fetch_res!(out.write(b"  addw $"));
                     fetch_res!(out.write(&n.to_string().bytes().collect::<Vec<_>>()));
                     match *self {
                         X86Mode::Amd64 => fetch_res!(out.write(b", (%rbx)\n")),
@@ -110,7 +110,7 @@ impl X86Mode {
                     }
                 },
                 AstNode::Decrement(n) => {
-                    fetch_res!(out.write(b"  subl $"));
+                    fetch_res!(out.write(b"  subw $"));
                     fetch_res!(out.write(&n.to_string().bytes().collect::<Vec<_>>()));
                     match *self {
                         X86Mode::Amd64 => fetch_res!(out.write(b", (%rbx)\n")),

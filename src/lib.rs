@@ -108,7 +108,10 @@ pub fn main<T: Iterator<Item = String>>(mut args: T) -> i32 {
     };
     let arch = match march {
         Some(a) => a,
+        #[cfg(all(target_pointer_width = "64"))]
         _ => X86Mode::Amd64,
+        #[cfg(all(target_pointer_width = "32"))]
+        _ => X86Mode::X86,
     };
     let format = match mformat {
         Some(f) => f,
